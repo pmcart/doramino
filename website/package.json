@@ -1,0 +1,14 @@
+{
+  "name": "doramino-landing-page",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "resend": "latest"
+  },
+  "devDependencies": {
+    "netlify-cli": "latest"
+  }
+}
