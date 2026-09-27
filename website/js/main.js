@@ -4,9 +4,11 @@ const primaryForm = document.getElementById('primary-form');
 const secondaryForm = document.getElementById('secondary-form');
 const confirmation = document.getElementById('confirmation');
 const formError = document.getElementById('form-error');
+const secondaryFormError = document.getElementById('secondary-form-error');
 const secondaryWorkEmail = document.getElementById('secondary-work-email');
 
 const REQUIRED_PRIMARY_FIELDS = ['workEmail', 'company', 'firmType', 'role', 'problem'];
+const GENERIC_ERROR = 'Something went wrong sending your application. Please try again.';
 
 function formValues(form) {
   const values = {};
@@ -14,12 +16,12 @@ function formValues(form) {
   return values;
 }
 
-function showError(message) {
-  formError.textContent = message;
+function showError(target, message) {
+  target.textContent = message;
 }
 
-function clearError() {
-  formError.textContent = '';
+function clearError(target) {
+  target.textContent = '';
 }
 
 async function submitLead(formType, fields) {
@@ -33,12 +35,12 @@ async function submitLead(formType, fields) {
 
 primaryForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-  clearError();
+  clearError(formError);
 
   const fields = formValues(primaryForm);
   const missing = REQUIRED_PRIMARY_FIELDS.filter((name) => !fields[name] || !fields[name].trim());
   if (missing.length > 0) {
-    showError('Please fill in all fields before submitting.');
+    showError(formError, 'Please fill in all fields before submitting.');
     return;
   }
 
@@ -46,12 +48,12 @@ primaryForm.addEventListener('submit', async (event) => {
   try {
     result = await submitLead('primary', fields);
   } catch {
-    showError('Something went wrong sending your application. Please try again.');
+    showError(formError, GENERIC_ERROR);
     return;
   }
 
   if (!result.ok) {
-    showError((result.errors && result.errors.join(' ')) || 'Something went wrong sending your application. Please try again.');
+    showError(formError, (result.errors && result.errors.join(' ')) || GENERIC_ERROR);
     return;
   }
 
@@ -62,6 +64,7 @@ primaryForm.addEventListener('submit', async (event) => {
 
 secondaryForm.addEventListener('submit', async (event) => {
   event.preventDefault();
+  clearError(secondaryFormError);
 
   const fields = formValues(secondaryForm);
 
@@ -69,10 +72,12 @@ secondaryForm.addEventListener('submit', async (event) => {
   try {
     result = await submitLead('secondary', fields);
   } catch {
+    showError(secondaryFormError, GENERIC_ERROR);
     return;
   }
 
   if (!result.ok) {
+    showError(secondaryFormError, (result.errors && result.errors.join(' ')) || GENERIC_ERROR);
     return;
   }
 

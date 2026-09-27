@@ -63,3 +63,17 @@ test('resend error response returns 500', async () => {
   assert.equal(res.status, 500);
   assert.equal((await res.json()).ok, false);
 });
+
+test('null JSON body returns 400 instead of crashing', async () => {
+  const req = new Request('http://localhost/.netlify/functions/submit-lead', { method: 'POST', body: 'null' });
+  const res = await createHandler(fakeClient())(req);
+  assert.equal(res.status, 400);
+  assert.equal((await res.json()).ok, false);
+});
+
+test('formType matching an inherited Object.prototype key returns 400', async () => {
+  const client = fakeClient();
+  const res = await createHandler(client)(postRequest({ formType: 'constructor', workEmail: 'a@example.com' }));
+  assert.equal(res.status, 400);
+  assert.equal(client.calls.length, 0);
+});

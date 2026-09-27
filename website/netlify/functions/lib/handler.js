@@ -22,7 +22,11 @@ export function createHandler(resendClient) {
       return jsonResponse(400, { ok: false, errors: ['Request body must be valid JSON'] });
     }
 
-    const formType = FORM_TYPES[body.formType];
+    if (!body || typeof body !== 'object') {
+      return jsonResponse(400, { ok: false, errors: ['Request body must be a JSON object'] });
+    }
+
+    const formType = Object.hasOwn(FORM_TYPES, body.formType) ? FORM_TYPES[body.formType] : null;
     if (!formType) {
       return jsonResponse(400, { ok: false, errors: ['formType must be "primary" or "secondary"'] });
     }
