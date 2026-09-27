@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --color-paper: #F0F2EE;
+  --color-panel: #E5E8E1;
+  --color-ink: #1C2420;
+  --color-ink-muted: #55605A;
+  --color-amber: #B4802A;
+  --color-amber-ink: #7A5518;
+  --color-teal: #3E7D74;
+  --color-line: #C7CBC1;
+
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --content-width: 42rem;
+  --spine-gap: 2.25rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, p, ul, table, form {
+  margin: 0;
+}
+
+h1, h2 {
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+p {
+  max-width: 62ch;
+}
+
+a {
+  color: var(--color-teal);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header */
+
+.site-header {
+  padding: 1.5rem max(1rem, calc((100% - var(--content-width)) / 2 - var(--spine-gap)));
+}
+
+.wordmark {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+}
+
+/* Section rhythm: a left spine runs the length of the page; every
+   section's content sits indented from it, echoing the evidence-trail
+   idea the product is built around rather than decorating the edge. */
+
+main {
+  max-width: calc(var(--content-width) + var(--spine-gap));
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+main > section {
+  position: relative;
+  padding: 2.75rem 0 2.75rem var(--spine-gap);
+  border-left: 1px solid var(--color-line);
+}
+
+main > section::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 3.1rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-ink-muted);
+}
+
+main > section:first-child {
+  padding-top: 1.5rem;
+}
+
+main > section:first-child::before {
+  top: 1.8rem;
+}
+
+main > section:last-child {
+  border-left-color: transparent;
+  border-image: linear-gradient(var(--color-line), transparent 70%) 1;
+}
+
+/* Hero */
+
+.hero h1 {
+  font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+  animation: rise 0.6s ease-out both;
+}
+
+.hero-subheading {
+  margin-top: 1.25rem;
+  font-size: 1.1875rem;
+  color: var(--color-ink-muted);
+  animation: rise 0.6s ease-out 0.1s both;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8em 1.4em;
+  background: var(--color-amber);
+  color: #FBF8F1;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 3px;
+  animation: rise 0.6s ease-out 0.2s both;
+  transition: background 0.15s ease;
+}
+
+.cta-button:hover {
+  background: var(--color-amber-ink);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section headings */
+
+main > section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Problem */
+
+.problem-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.problem-list li {
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--color-ink-muted);
+}
+
+.problem-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  background: var(--color-amber);
+}
+
+/* Concrete example */
+
+.example p {
+  color: var(--color-ink-muted);
+}
+
+.sample-output {
+  margin-top: 1.5rem;
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 3px;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+}
+
+.sample-output-label {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  margin-bottom: 0.75rem;
+}
+
+.sample-output ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.sample-output li {
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--color-amber);
+}
+
+/* Workflows table */
+
+.workflows-table-wrap {
+  overflow-x: auto;
+}
+
+.workflows-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 30rem;
+  font-size: 0.9375rem;
+}
+
+.workflows-table th,
+.workflows-table td {
+  text-align: left;
+  padding: 0.75rem 1rem 0.75rem 0;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+}
+
+.workflows-table thead th {
+  color: var(--color-ink-muted);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.workflows-table tbody th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Audience / Pilot */
+
+.audience p,
+.pilot p {
+  color: var(--color-ink-muted);
+}
+
+.pilot p + p {
+  margin-top: 0.75rem;
+}
+
+/* Apply form */
+
+form {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 28rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.65em 0.75em;
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 3px;
+  color: var(--color-ink);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+button {
+  justify-self: start;
+  padding: 0.75em 1.4em;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: none;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: var(--color-amber-ink);
+}
+
+.form-error {
+  color: var(--color-amber-ink);
+  font-size: 0.9375rem;
+}
+
+.form-error:empty {
+  display: none;
+}
+
+/* Honeypot: kept in the layout and in the tab order path for simple bots
+   that only fill visible-looking inputs, but placed off-screen so real
+   visitors never see or reach it. */
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Confirmation state */
+
+.is-hidden {
+  display: none;
+}
+
+.confirmation-message {
+  color: var(--color-ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+#confirmation {
+  animation: rise 0.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1, .hero-subheading, .cta-button, #confirmation {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --spine-gap: 1.5rem;
+  }
+
+  main > section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-subheading {
+    font-size: 1.0625rem;
+  }
+}
