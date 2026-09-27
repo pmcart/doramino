@@ -37,14 +37,24 @@ primaryForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   formError.textContent = '';
 
-  const hasBlankField = PRIMARY_REQUIRED_FIELDS.some((name) => !fieldValue(primaryForm, name));
-  if (hasBlankField) {
+  PRIMARY_REQUIRED_FIELDS.forEach((name) => {
+    primaryForm.elements[name].removeAttribute('aria-invalid');
+    primaryForm.elements[name].removeAttribute('aria-describedby');
+  });
+  const blankField = PRIMARY_REQUIRED_FIELDS.find((name) => !fieldValue(primaryForm, name));
+  if (blankField) {
     formError.textContent = 'Please fill in all fields before submitting.';
+    primaryForm.elements[blankField].setAttribute('aria-invalid', 'true');
+    primaryForm.elements[blankField].setAttribute('aria-describedby', 'form-error');
+    primaryForm.elements[blankField].focus();
     return;
   }
 
   if (primaryForm.elements['workEmail'].validity.typeMismatch) {
     formError.textContent = 'Please enter a valid work email.';
+    primaryForm.elements['workEmail'].setAttribute('aria-invalid', 'true');
+    primaryForm.elements['workEmail'].setAttribute('aria-describedby', 'form-error');
+    primaryForm.elements['workEmail'].focus();
     return;
   }
 
@@ -62,6 +72,8 @@ primaryForm.addEventListener('submit', async (event) => {
 
     primaryForm.classList.add('is-hidden');
     confirmation.classList.remove('is-hidden');
+    document.querySelector('.form-intro').classList.add('is-hidden');
+    confirmation.focus();
     secondaryForm.elements['workEmail'].value = workEmail;
     secondaryForm.elements['_replyto'].value = workEmail;
   } catch (err) {
@@ -86,7 +98,9 @@ secondaryForm.addEventListener('submit', async (event) => {
     const thanks = document.createElement('p');
     thanks.className = 'confirmation-thanks';
     thanks.textContent = "Thanks — that's helpful context.";
+    thanks.tabIndex = -1;
     secondaryForm.replaceWith(thanks);
+    thanks.focus();
   } catch (err) {
     secondaryFormError.textContent = GENERIC_ERROR_MESSAGE;
     setSubmitting(secondaryForm, false);

@@ -2,6 +2,12 @@
 
 A static landing page (plain HTML/CSS/JS, no build step, no dependencies) with lead capture via [Formspree](https://formspree.io) and deployment to GitHub Pages.
 
+## Brand assets
+
+`assets/doramino-mark.png` is the generated Doramino symbol used in the header, footer and browser icon. The wordmark is live text styled in `css/styles.css`, so the name stays sharp and accessible. Keep the image's transparent background when reusing it.
+
+See [the website review](../docs/website-review.md) for suggested follow-up improvements and verification limits.
+
 ## 1. Formspree setup
 
 The lead form needs a real Formspree endpoint before it can send you email:
