@@ -48,6 +48,9 @@ primaryForm.addEventListener('submit', async (event) => {
     return;
   }
 
+  const workEmail = fieldValue(primaryForm, 'workEmail');
+  primaryForm.elements['_replyto'].value = workEmail;
+
   setSubmitting(primaryForm, true);
   try {
     const res = await submitToFormspree(new FormData(primaryForm));
@@ -57,10 +60,10 @@ primaryForm.addEventListener('submit', async (event) => {
       return;
     }
 
-    const workEmail = fieldValue(primaryForm, 'workEmail');
     primaryForm.classList.add('is-hidden');
     confirmation.classList.remove('is-hidden');
     secondaryForm.elements['workEmail'].value = workEmail;
+    secondaryForm.elements['_replyto'].value = workEmail;
   } catch (err) {
     formError.textContent = GENERIC_ERROR_MESSAGE;
     setSubmitting(primaryForm, false);
