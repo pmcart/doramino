@@ -269,6 +269,56 @@ button[type='submit']:active { transform: translateY(0); }
   border-bottom: none;
 }
 
+@media (max-width: 640px) {
+  .workflows-table-wrap {
+    overflow-x: visible;
+    border: none;
+    background: none;
+  }
+
+  .workflows-table { min-width: 0; }
+
+  .workflows-table thead { display: none; }
+
+  .workflows-table, .workflows-table tbody, .workflows-table tr,
+  .workflows-table th, .workflows-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .workflows-table tbody tr {
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    padding: 1em 1.1em;
+  }
+
+  .workflows-table tbody tr:last-child { margin-bottom: 0; }
+
+  .workflows-table th, .workflows-table td {
+    border-bottom: none;
+    padding: 0.4em 0;
+    white-space: normal;
+  }
+
+  .workflows-table tbody th {
+    padding-top: 0;
+    padding-bottom: 0.6em;
+    margin-bottom: 0.4em;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .workflows-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 0.2em;
+  }
+}
+
 /* Who / Pilot */
 
 .who p, .pilot p {

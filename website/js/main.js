@@ -21,6 +21,18 @@ function submitToFormspree(formData) {
   });
 }
 
+function setSubmitting(form, isSubmitting) {
+  const button = form.querySelector('button[type="submit"]');
+  if (isSubmitting) {
+    button.dataset.originalLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+  } else {
+    button.disabled = false;
+    button.textContent = button.dataset.originalLabel;
+  }
+}
+
 primaryForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   formError.textContent = '';
@@ -31,10 +43,17 @@ primaryForm.addEventListener('submit', async (event) => {
     return;
   }
 
+  if (primaryForm.elements['workEmail'].validity.typeMismatch) {
+    formError.textContent = 'Please enter a valid work email.';
+    return;
+  }
+
+  setSubmitting(primaryForm, true);
   try {
     const res = await submitToFormspree(new FormData(primaryForm));
     if (!res.ok) {
       formError.textContent = GENERIC_ERROR_MESSAGE;
+      setSubmitting(primaryForm, false);
       return;
     }
 
@@ -44,6 +63,7 @@ primaryForm.addEventListener('submit', async (event) => {
     secondaryForm.elements['workEmail'].value = workEmail;
   } catch (err) {
     formError.textContent = GENERIC_ERROR_MESSAGE;
+    setSubmitting(primaryForm, false);
   }
 });
 
@@ -51,10 +71,12 @@ secondaryForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   secondaryFormError.textContent = '';
 
+  setSubmitting(secondaryForm, true);
   try {
     const res = await submitToFormspree(new FormData(secondaryForm));
     if (!res.ok) {
       secondaryFormError.textContent = GENERIC_ERROR_MESSAGE;
+      setSubmitting(secondaryForm, false);
       return;
     }
 
@@ -64,5 +86,6 @@ secondaryForm.addEventListener('submit', async (event) => {
     secondaryForm.replaceWith(thanks);
   } catch (err) {
     secondaryFormError.textContent = GENERIC_ERROR_MESSAGE;
+    setSubmitting(secondaryForm, false);
   }
 });
