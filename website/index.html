@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doramino — DORA resilience testing for small teams</title>
+  <meta name="description" content="Plan incident drills, coordinate recovery checks with your IT providers, and track the evidence and follow-up actions in one place.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Doramino</p>
+      <h1>Make DORA resilience testing manageable for your small team.</h1>
+      <p class="lede">Plan incident drills, coordinate recovery checks with your IT providers, and track the evidence and follow-up actions in one place.</p>
+      <a class="cta" href="#apply">Apply for the founding customer programme</a>
+    </div>
+  </header>
+
+  <section class="problem">
+    <div class="container">
+      <ul class="problem-list">
+        <li>Test plans sit in spreadsheets.</li>
+        <li>Evidence is scattered across emails and IT tickets.</li>
+        <li>Findings stay unresolved because ownership is unclear.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="example">
+    <div class="container">
+      <h2>Your critical supplier becomes unavailable. What happens next?</h2>
+      <ol class="example-steps">
+        <li>Your team receives a simulated alert.</li>
+        <li>They contact the provider using the agreed process.</li>
+        <li>Decisions and responses are recorded as they happen.</li>
+        <li>Improvements are assigned to an owner.</li>
+      </ol>
+      <div class="sample-output">
+        <p class="sample-output-label">Illustrative example output</p>
+        <ul>
+          <li>Provider acknowledgement exceeded your target.</li>
+          <li>Recovery evidence is missing.</li>
+          <li>Two corrective actions need an owner.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflows">
+    <div class="container">
+      <h2>Three workflows</h2>
+      <div class="workflows-table-wrap">
+        <table class="workflows-table">
+          <thead>
+            <tr>
+              <th scope="col">Workflow</th>
+              <th scope="col">What the customer does</th>
+              <th scope="col">What Doramino provides</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Incident-response drills</th>
+              <td>Involve staff and IT providers in a simulated incident</td>
+              <td>Timed scenario updates, recorded acknowledgements and decisions, and a review of missed steps</td>
+            </tr>
+            <tr>
+              <th scope="row">Recovery checks</th>
+              <td>Run an agreed recovery test through their IT team or provider</td>
+              <td>Test instructions, evidence requests, actual recovery timings and comparison with the customer's targets</td>
+            </tr>
+            <tr>
+              <th scope="row">Remediation and retesting</th>
+              <td>Assign and resolve issues discovered during testing</td>
+              <td>Owners, deadlines, supporting evidence and a record of whether the subsequent test passed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="who">
+    <div class="container">
+      <p>Built for smaller payment and e-money firms working with lean internal teams and external IT providers.</p>
+    </div>
+  </section>
+
+  <section class="pilot">
+    <div class="container">
+      <h2>Become a founding customer</h2>
+      <p>Configured around your services, suppliers and existing workflows.</p>
+      <p>Become a design partner and help shape the workflows and integrations we build next.</p>
+    </div>
+  </section>
+
+  <section class="apply" id="apply">
+    <div class="container">
+      <h2>Apply for the founding customer programme</h2>
+
+      <form id="primary-form" novalidate>
+        <div class="field">
+          <label for="workEmail">Work email</label>
+          <input type="email" id="workEmail" name="workEmail" required>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" required>
+        </div>
+        <div class="field">
+          <label for="firmType">Firm type</label>
+          <select id="firmType" name="firmType" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="Payment institution">Payment institution</option>
+            <option value="E-money institution">E-money institution</option>
+            <option value="Other financial services firm">Other financial services firm</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="role">Role</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="COO">COO</option>
+            <option value="Head of Risk">Head of Risk</option>
+            <option value="Compliance">Compliance</option>
+            <option value="Internal IT">Internal IT</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="problem">Biggest testing or evidence-management problem</label>
+          <textarea id="problem" name="problem" rows="4" required></textarea>
+        </div>
+
+        <div class="hp-field">
+          <label for="_gotcha">Leave this field empty</label>
+          <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <input type="hidden" name="formType" value="primary">
+
+        <div id="form-error" class="form-error" role="alert"></div>
+
+        <button type="submit">Apply for the founding customer programme</button>
+      </form>
+
+      <div id="confirmation" class="confirmation is-hidden">
+        <p class="confirmation-thanks">Thanks — we've received your application. A couple of quick optional questions help us prepare:</p>
+
+        <form id="secondary-form" novalidate>
+          <div class="field">
+            <label for="currentTools">What tools do you use today for testing or evidence?</label>
+            <input type="text" id="currentTools" name="currentTools">
+          </div>
+          <div class="field">
+            <label for="itProvider">Who is your external IT provider?</label>
+            <input type="text" id="itProvider" name="itProvider">
+          </div>
+          <div class="field">
+            <label for="nextExercise">When is your next planned exercise?</label>
+            <input type="text" id="nextExercise" name="nextExercise">
+          </div>
+
+          <input type="hidden" name="formType" value="secondary">
+          <input type="hidden" name="workEmail" value="">
+
+          <div id="secondary-form-error" class="form-error" role="alert"></div>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
