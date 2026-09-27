@@ -1,4 +1,4 @@
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_ME";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdekpbyk";
 
 const PRIMARY_REQUIRED_FIELDS = ['workEmail', 'company', 'firmType', 'role', 'problem'];
 const GENERIC_ERROR_MESSAGE = 'Something went wrong submitting this. Please try again.';
