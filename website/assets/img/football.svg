@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Illustration of a football pitch under floodlights">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1b33"/><stop offset="1" stop-color="#27456f"/></linearGradient>
+    <radialGradient id="glow" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#fff6c8" stop-opacity=".3"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#sky)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <g fill="#8fa3c2"><rect x="140" y="60" width="10" height="250"/><rect x="1050" y="60" width="10" height="250"/>
+    <rect x="110" y="40" width="70" height="30" rx="4"/><rect x="1020" y="40" width="70" height="30" rx="4"/></g>
+  <g fill="#fffbe0"><circle cx="125" cy="55" r="5"/><circle cx="145" cy="55" r="5"/><circle cx="165" cy="55" r="5"/><circle cx="1035" cy="55" r="5"/><circle cx="1055" cy="55" r="5"/><circle cx="1075" cy="55" r="5"/></g>
+  <g fill="#10213a" opacity=".85"><rect x="0" y="300" width="1200" height="60"/></g>
+  <g fill="#e8603c" opacity=".7"><circle cx="90" cy="325" r="6"/><circle cx="230" cy="322" r="6"/><circle cx="410" cy="327" r="6"/><circle cx="700" cy="323" r="6"/><circle cx="880" cy="326" r="6"/><circle cx="1100" cy="322" r="6"/></g>
+  <polygon points="0,360 1200,360 1200,675 0,675" fill="#2f7d46"/>
+  <g fill="#2a713f"><polygon points="0,360 1200,360 1200,400 0,400"/><polygon points="0,440 1200,440 1200,495 0,495"/><polygon points="0,545 1200,545 1200,620 0,620"/></g>
+  <g fill="none" stroke="#eaf5ea" stroke-width="5" opacity=".9">
+    <path d="M200 380 L1000 380 L1120 650 L80 650 Z"/>
+    <path d="M600 380 L600 650"/>
+    <ellipse cx="600" cy="515" rx="130" ry="52"/>
+    <path d="M440 380 L400 450 L800 450 L760 380"/>
+  </g>
+  <circle cx="600" cy="515" r="5" fill="#eaf5ea"/>
+  <g transform="translate(760 560)"><circle r="26" fill="#fff"/><path d="M0 -12 L11 -4 L7 10 L-7 10 L-11 -4 Z" fill="#14233b"/><circle r="26" fill="none" stroke="#14233b" stroke-width="2"/></g>
+  <ellipse cx="760" cy="592" rx="30" ry="6" fill="#000" opacity=".25"/>
+  <g transform="translate(470 540)"><circle cy="-62" r="14" fill="#e8603c"/><path d="M-18 -46 L18 -46 L24 10 L-24 10 Z" fill="#e8603c"/><path d="M-12 10 L-20 60 M12 10 L26 56" stroke="#e8603c" stroke-width="12" stroke-linecap="round"/></g>
+  <g transform="translate(900 520)"><circle cy="-62" r="14" fill="#f3d264"/><path d="M-18 -46 L18 -46 L24 10 L-24 10 Z" fill="#f3d264"/><path d="M-12 10 L-24 56 M12 10 L20 60" stroke="#f3d264" stroke-width="12" stroke-linecap="round"/></g>
+</svg>

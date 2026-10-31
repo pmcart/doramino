@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Illustration of runners on a park path in autumn">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfdcec"/><stop offset="1" stop-color="#f5ecd6"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#sky)"/>
+  <circle cx="190" cy="140" r="60" fill="#fff6d6"/>
+  <g fill="#9fbf9a" opacity=".7"><path d="M0 330 Q200 250 400 320 T800 310 T1200 300 L1200 420 L0 420 Z"/></g>
+  <g>
+    <rect x="130" y="250" width="14" height="150" fill="#6b4a33"/><circle cx="137" cy="230" r="85" fill="#d9822b"/><circle cx="90" cy="270" r="55" fill="#c0521f"/><circle cx="190" cy="265" r="55" fill="#e5a53a"/>
+    <rect x="980" y="230" width="16" height="170" fill="#6b4a33"/><circle cx="988" cy="205" r="95" fill="#c0521f"/><circle cx="940" cy="255" r="55" fill="#e5a53a"/><circle cx="1045" cy="250" r="58" fill="#d9822b"/>
+    <rect x="560" y="290" width="10" height="110" fill="#6b4a33"/><circle cx="565" cy="275" r="55" fill="#e5a53a"/>
+  </g>
+  <polygon points="0,400 1200,400 1200,675 0,675" fill="#6fa070"/>
+  <polygon points="470,400 730,400 1100,675 100,675" fill="#d8c3a0"/>
+  <g stroke="#f7f1e3" stroke-width="5" stroke-dasharray="26 20" opacity=".9"><path d="M600 400 L600 675"/></g>
+  <g fill="#e8603c" opacity=".8"><circle cx="300" cy="620" r="8"/><circle cx="360" cy="590" r="6"/><circle cx="870" cy="610" r="7"/><circle cx="820" cy="580" r="6"/></g>
+  <g transform="translate(540 560)" fill="#1a2b45"><circle cy="-95" r="16"/><path d="M-22 -76 L22 -76 L26 -10 L-22 -10 Z" fill="#e8603c"/><path d="M-10 -10 L-34 40 L-52 36 M10 -10 L22 44 L40 70" stroke="#1a2b45" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M-20 -68 L-44 -30 M20 -68 L44 -40" stroke="#e8603c" stroke-width="11" stroke-linecap="round"/></g>
+  <g transform="translate(680 540) scale(.8)" fill="#1a2b45"><circle cy="-95" r="16"/><path d="M-22 -76 L22 -76 L26 -10 L-22 -10 Z" fill="#f3d264"/><path d="M-10 -10 L-26 52 L-46 56 M10 -10 L34 36 L52 28" stroke="#1a2b45" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M-20 -68 L-40 -32 M20 -68 L42 -26" stroke="#f3d264" stroke-width="11" stroke-linecap="round"/></g>
+</svg>

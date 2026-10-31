@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Illustration of a rowing crew on the river at sunrise">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4b183"/><stop offset=".6" stop-color="#fbe3b8"/><stop offset="1" stop-color="#e9f1f1"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86a6"/><stop offset="1" stop-color="#1f4a6b"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#sky)"/>
+  <circle cx="300" cy="260" r="80" fill="#fff3cf"/>
+  <g fill="#6b7f8c" opacity=".75"><rect x="760" y="170" width="46" height="170"/><rect x="810" y="130" width="30" height="210"/><rect x="845" y="190" width="60" height="150"/><rect x="910" y="150" width="40" height="190"/><rect x="955" y="210" width="80" height="130"/>
+    <path d="M0 330 H1200 V350 H0 Z"/></g>
+  <g stroke="#5d7280" stroke-width="6" opacity=".8"><path d="M0 300 H700 M100 300 V345 M250 300 V345 M400 300 V345 M550 300 V345 M700 300 V345"/></g>
+  <rect y="340" width="1200" height="335" fill="url(#water)"/>
+  <g stroke="#cfe6ee" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"><path d="M60 400 q40 -10 80 0 t80 0"/><path d="M700 420 q40 -10 80 0 t80 0 t80 0"/><path d="M300 470 q50 -10 100 0 t100 0"/><path d="M900 520 q50 -10 100 0 t100 0"/><path d="M120 600 q60 -12 120 0 t120 0"/></g>
+  <path d="M170 520 Q600 560 1030 520 Q600 535 170 520 Z" fill="#f3eadb"/>
+  <g stroke="#b9434a" stroke-width="5" opacity=".95"><path d="M300 520 L260 460 M420 524 L380 464 M540 527 L500 467 M660 527 L700 467 M780 524 L820 464 M900 520 L940 460"/></g>
+  <g fill="#e8603c"><circle cx="300" cy="490" r="13"/><circle cx="420" cy="492" r="13"/><circle cx="540" cy="494" r="13"/><circle cx="660" cy="494" r="13"/><circle cx="780" cy="492" r="13"/><circle cx="900" cy="490" r="13"/></g>
+  <g stroke="#e8603c" stroke-width="11" stroke-linecap="round"><path d="M300 500 V520 M420 502 V522 M540 504 V524 M660 504 V524 M780 502 V522 M900 500 V520"/></g>
+  <path d="M120 540 Q600 600 1080 540 L1080 560 Q600 640 120 560 Z" fill="#000" opacity=".15"/>
+</svg>
